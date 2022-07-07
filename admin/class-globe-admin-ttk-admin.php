@@ -100,4 +100,41 @@ class Globe_Admin_Ttk_Admin {
 
 	}
 
+	
+	/**
+	 * Create admin menu hook
+	 * 
+	 * Points to: globe_life_admin_menu_page()
+	 */
+	public function create_admin_menu() {
+		// Top level menu item for sidebar menu
+		add_menu_page(
+			'Globe Life Administration Plugin',
+			'Globe Life',
+			'manage_options',
+			'globe-life-admin-menu',
+			array( $this, 'globe_life_admin_menu_page' ),
+			'dashicons-admin-site',
+			58
+		);
+
+		// Submenu item for sidebar menu
+		add_submenu_page(
+			'globe-life-admin-menu',
+			'Globe Life Admin Submenu',
+			'Submenu',
+			'manage_options',
+			'globe-life-admin-submenu',
+			array( $this, 'globe_life_admin_submenu_page' )
+		);
+	}
+
+	public function globe_life_admin_menu_page() {
+		// buffer
+		ob_start();
+		include_once GLOBE_ADMIN_TTK_PATH . 'admin/partials/globe-admin-ttk-admin-display.php';
+		$output = ob_get_clean();
+		echo $output;
+	}
+
 }

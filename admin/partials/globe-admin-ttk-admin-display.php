@@ -14,3 +14,11 @@
 ?>
 
 <!-- This file should primarily consist of HTML with a little bit of PHP. -->
+
+<h1>Globe Life Administration Panel</h1>
+<section>
+    <h2>API Keys</h2>
+    <p>
+        Pending further development.
+    </p>
+</section>
