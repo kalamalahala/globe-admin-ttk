@@ -64,6 +64,7 @@ register_deactivation_hook( __FILE__, 'deactivate_globe_admin_ttk' );
  */
 require plugin_dir_path( __FILE__ ) . 'includes/class-globe-admin-ttk.php';
 
+
 /**
  * Begins execution of the plugin.
  *
